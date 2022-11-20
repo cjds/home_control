@@ -1,4 +1,4 @@
-name: 'Deploy Home Control'
+nsecrets.gcp_credentialsame: 'Deploy Home Control'
 on: [workflow_dispatch]
 jobs:
   job_id:
@@ -20,6 +20,7 @@ jobs:
       with:
         name: 'wise-lights'
         runtime: 'python310'
+        region: 'us-west1'
 
     # Example of using the output
     - id: 'test'
