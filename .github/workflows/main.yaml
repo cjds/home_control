@@ -1,4 +1,4 @@
-nsecrets.gcp_credentialsame: 'Deploy Home Control'
+name: 'Deploy Home Control'
 on: [workflow_dispatch]
 jobs:
   job_id:
