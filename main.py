@@ -1,5 +1,6 @@
 from flask import escape
 import functions_framework
+from firebase_admin import db
 
 @functions_framework.http
 def wise_lights(request):
@@ -21,7 +22,14 @@ def wise_lights(request):
         name = request_args['name']
     else:
         name = 'World'
-    return 'Hello {}!'.format(escape(name))
+
+    doc_ref = db.collection(u'cities').document(u'SF')
+
+    doc = doc_ref.get()
+    if doc.exists:
+        return (f'Document data: {doc.to_dict()}')
+    else:
+        return 'No such document!'
 
 """
 import os
