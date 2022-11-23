@@ -1,6 +1,7 @@
 from flask import escape
 import functions_framework
-from firebase_admin import db
+from firebase_admin import firestore 
+
 
 @functions_framework.http
 def wise_lights(request):
@@ -22,6 +23,7 @@ def wise_lights(request):
         name = request_args['name']
     else:
         name = 'World'
+    db = firebase_admin.firestore.client()
 
     doc_ref = db.collection(u'cities').document(u'SF')
 
