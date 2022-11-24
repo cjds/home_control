@@ -23,7 +23,7 @@ def wise_lights(request):
         name = request_args['name']
     else:
         name = 'World'
-    db = firebase_admin.firestore.client()
+    db = firestore.client()
 
     doc_ref = db.collection(u'cities').document(u'SF')
 
