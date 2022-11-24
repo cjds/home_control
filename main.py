@@ -1,6 +1,9 @@
 from flask import escape
 import functions_framework
 from firebase_admin import firestore 
+import firebase_admin
+
+firebase_admin.initialize_app()
 
 
 @functions_framework.http
