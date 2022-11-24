@@ -1,3 +1,2 @@
-wyze_sdk
+# wyze_sdk
 firebase-admin
-protobuf==3.20.*
